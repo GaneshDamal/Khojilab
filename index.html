@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Add a Product</title>
+    <Style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+        h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+  }
+
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"], textarea, input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  a {
+    display: inline-block;
+    background-color: #008CBA;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  a:hover {
+    background-color: #006b8e;
+  }
+    </Style>
+  </head>
+  <body>
+    <h1>Add a Product</h1>
+    <form action="/" method="POST">
+      <label for="prod_id">Product ID:</label>
+      <input type="text" name="prod_id" required><br><br>
+      <label for="prod_name">Product Name:</label>
+      <input type="text" name="prod_name" required><br><br>
+      <label for="prod_desc">Product Description:</label>
+      <textarea name="prod_desc" required></textarea><br><br>
+      <label for="prod_category">Product Category:</label>
+      <input type="text" name="prod_category" required><br><br>
+      <label for="prod_price">Product Price:</label>
+      <input type="number" name="prod_price" step=".01" min="0" required><br><br>
+      <label for="discount_percent">Discount Percentage:</label>
+      <input type="number" name="discount_percent" step=".01" min="0" max="100"><br><br>
+      <label for="prod_image">Product Image URL:</label>
+      <input type="text" name="prod_image"><br><br>
+      <input type="submit" value="Submit">
+      <a href="product.html" target="_blank">View Product</a>
+    </form>
+  </body>
+</html>
+

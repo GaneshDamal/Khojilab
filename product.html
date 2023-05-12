@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <style>
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+      table {
+        margin: auto;
+        border-collapse: collapse;
+        width: 90%;
+      }
+      th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid black;
+      }
+      th {
+        background-color: #eee;
+      }
+      img {
+        max-width: 100px;
+      }
+      .pagination {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .pagination a {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid black;
+        margin-right: 5px;
+      }
+      .pagination a.active {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Product List</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Image</th>
+      </tr>
+
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.discount }}</td>
+          <td><img src="{{ product.image }}" alt="{{ product.name }}"></td>
+        </tr>
+
+    </table>
+    <div class="pagination">
+
+        <a href="{{ url_for('products', page=products.prev_num) }}">&laquo; Previous</a>
+
+        <span>&laquo; Previous</span>
+
+        <a class="active" href="{{ url_for('products', page=num) }}">{{ num }}</a>
+
+        <a href="{{ url_for('products', page=num) }}">{{ num }}</a>
+
+
+      <span>...</span>
+
+    <a href="{{ url_for('products', page=products.next_num) }}">Next &raquo;</a>
+
+    <span>Next &raquo;</span>
+
+</div>
+  </body>
+</html>
